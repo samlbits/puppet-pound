@@ -3,7 +3,7 @@ define pound::entry ($listen_ip,
     $listen_port,
     $listen_protocol,
     $head_require,
-    $backend_ip,
+    $backend_ips,
     $backend_port) {
 
 
