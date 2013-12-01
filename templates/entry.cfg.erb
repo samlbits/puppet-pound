@@ -1,7 +1,7 @@
 #
 # Listener for domain <%= @name %>
 #
-<%=listen_protocol%>
+<%= @listen_protocol %>
     Address <%= @listen_ip %>
     Port    <%= @listen_port %>
     <% if @listen_protocol == "ListenHTTPS" %>
