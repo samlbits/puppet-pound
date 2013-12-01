@@ -5,7 +5,7 @@
     Address <%= @listen_ip %>
     Port    <%= @listen_port %>
     <% if @listen_protocol == "ListenHTTPS" %>
-    Cert    "<%= @server_cert_file -%>"
+    Cert    "<%= @server_cert -%>"
     <% end %>
     Service
         HeadRequire "<%= @head_require -%>"
