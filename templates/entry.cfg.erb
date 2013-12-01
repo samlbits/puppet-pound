@@ -6,15 +6,16 @@
     Port    <%= @listen_port %>
     <% if @listen_protocol == "ListenHTTPS" %>
     Cert    "<%= @server_cert -%>"
+    <% if @ssl_ciphers != "" %>Ciphers "<%= @ssl_ciphers -%><% end %>
     <% end %>
     Service
         HeadRequire "<%= @head_require -%>"
-	<% @backend_ips.each do |this_ip| -%>
+<% @backend_ips.each do |this_ip| -%>
         BackEnd
             Address <%= this_ip %>
             Port    <%= @backend_port %>
         End
-	<% end -%>
+<% end -%>
     End
 End
 
