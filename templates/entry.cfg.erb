@@ -16,6 +16,11 @@
             Port    <%= @backend_port %>
         End
 <% end -%>
+        Session
+            Type    <%= @session_type BASIC -%>
+            TTL     <%= @session_ttl -%>
+            <% if @session_id != "" %>ID      "<%= @session_id -%><% end %>
+        End
     End
 End
 

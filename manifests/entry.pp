@@ -7,6 +7,10 @@ define pound::entry ($listen_ip,
     $backend_port,
     $server_cert = '/etc/ssl/private/ssl-cert-snakeoil.key',
     $ssl_ciphers = '',
+
+    $session_type = 'BASIC',
+    $session_ttl  = '300',
+    $session_id   = '',
 ) {
     concat::fragment {
         "pound_entry-${name}" :
