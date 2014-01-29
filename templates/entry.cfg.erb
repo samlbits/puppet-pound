@@ -10,9 +10,19 @@
     <% end %>
     Service
         HeadRequire "<%= @head_require -%>"
-<% @backend_ips.each do |this_ip| -%>
+<%   @add_header.each do |this_header| -%>
+        AddHeader <%= this_header %>
+<% end -%>
+<% if @backend_ip.is_a? Array -%>
+<%   @backend_ip.each do |this_ip| -%>
         BackEnd
             Address <%= this_ip %>
+            Port    <%= @backend_port %>
+        End
+<% end -%>
+<% else -%>
+        BackEnd
+            Address <%= @backend_ip %>
             Port    <%= @backend_port %>
         End
 <% end -%>

@@ -3,7 +3,7 @@ define pound::entry ($listen_ip,
     $listen_port,
     $listen_protocol,
     $head_require,
-    $backend_ips,
+    $backend_ip,   # can be either a single IP or an array of IPs
     $backend_port,
     $server_cert = '/etc/ssl/private/ssl-cert-snakeoil.key',
     $ssl_ciphers = '',
