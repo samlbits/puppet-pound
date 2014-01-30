@@ -10,7 +10,7 @@
     <% end %>
     Service
         HeadRequire "<%= @head_require -%>"
-<%   @add_header.each do |this_header| -%>
+<%   @add_headers.each do |this_header| -%>
         AddHeader <%= this_header %>
 <% end -%>
 <% if @backend_ip.is_a? Array -%>
