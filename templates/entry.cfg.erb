@@ -8,11 +8,11 @@
     Cert    "<%= @server_cert -%>"
     <% if @ssl_ciphers != "" %>Ciphers "<%= @ssl_ciphers -%>"<% end %>
     <% end %>
+<% @add_headers.each do |this_header| -%>
+    AddHeader <%= this_header %>
+<% end -%>
     Service
         HeadRequire "<%= @head_require -%>"
-<%   @add_headers.each do |this_header| -%>
-        AddHeader <%= this_header %>
-<% end -%>
 <% if @backend_ip.is_a? Array -%>
 <%   @backend_ip.each do |this_ip| -%>
         BackEnd
