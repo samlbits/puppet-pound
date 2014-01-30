@@ -7,6 +7,7 @@ define pound::entry ($listen_ip,
     $backend_port,
     $server_cert = '/etc/ssl/private/ssl-cert-snakeoil.key',
     $ssl_ciphers = '',
+    $add_header = [],
 
     $session_type = 'IP',
     $session_ttl  = '300',
