@@ -7,7 +7,7 @@
     <% if @listen_protocol == "ListenHTTPS" %>
     Cert    "<%= @server_cert -%>"
     <% if @ssl_ciphers != "" %>Ciphers "<%= @ssl_ciphers -%>"
-    SSLHonorCipherOrder    1
+    #SSLHonorCipherOrder    1
     <% end %>
     <% end %>
 <% @add_headers.each do |this_header| -%>
