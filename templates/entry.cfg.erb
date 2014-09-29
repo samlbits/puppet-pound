@@ -5,7 +5,9 @@
     Address <%= @listen_ip %>
     Port    <%= @listen_port %>
     <% if @listen_protocol == "ListenHTTPS" %>
-    Cert    "<%= @server_cert -%>"
+    <% @server_certs.each do |cert| -%>
+    Cert    "<%= cert %>"
+    <% end %>
     <% if @ssl_ciphers != "" %>Ciphers "<%= @ssl_ciphers -%>"
     #SSLHonorCipherOrder    1
     <% end %>
